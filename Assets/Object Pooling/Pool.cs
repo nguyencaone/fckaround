@@ -10,7 +10,7 @@ public class Pool
 
     public Pool(IPoolable pref)
     {
-        _prototype = pref;  
+        _prototype = pref;
         _usableStack = new Stack<GameObject>();
     }
 
@@ -19,7 +19,7 @@ public class Pool
         var v = pref.GetComponent<IPoolable>();
         if (v == null) return null;
         _prefabLookup.TryGetValue(pref, out var pool);
-        if(pool == null)
+        if (pool == null)
         {
             pool = new Pool(v);
             _prefabLookup[pref] = pool;
@@ -30,7 +30,7 @@ public class Pool
     public void Populate(int count)
     {
         List<GameObject> lst = new List<GameObject>();
-        for(int i = 0; i < count; i++)
+        for (int i = 0; i < count; i++)
         {
             lst.Add(CreateNewInstance());
         }
@@ -38,29 +38,34 @@ public class Pool
         for (int i = 0; i < count; i++)
         {
             lst[i].ReturnToPool();
-            _usableStack.Push(lst[i]) ;
+            _usableStack.Push(lst[i]);
         }
     }
 
-    public static GameObject GetInstance(GameObject pref)
+    public static GameObject GetInstance(GameObject pref, Transform parentTrans = null)
     {
-        return GetPoolByPrefab(pref).GetInstance();
+        return GetPoolByPrefab(pref).GetInstance(parentTrans);
     }
 
-    public GameObject GetInstance()
+    public GameObject GetInstance(Transform parentTrans)
     {
-        if(_usableStack.Count == 0)
+        if (_usableStack.Count == 0)
         {
-            return CreateNewInstance();
+            Debug.Log("Stack not enough, instantiate new instance");
+            return CreateNewInstance(parentTrans);
         }
-        return _usableStack.Pop();
+        var v = _usableStack.Pop();
+        v.SetActive(true);
+        if (parentTrans != null) v.transform.SetParent(parentTrans);
+        return v;
     }
 
-    public GameObject CreateNewInstance()
+    public GameObject CreateNewInstance(Transform parentTrans = null)
     {
         var v = _prototype as MonoBehaviour;
-        if(v == null) return null;
+        if (v == null) return null;
         var res = Object.Instantiate(v.gameObject);
+        if (parentTrans != null) res.transform.SetParent(parentTrans);
         res.GetComponent<IPoolable>().SetPool(this);
         return res;
     }
