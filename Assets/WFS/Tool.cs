@@ -13,7 +13,7 @@ public class Tool : MonoBehaviour
         foreach (var v in lst)
         {
             // lu
-            res.Clear();
+             res = new List<TileConfig>();
             foreach(var i in v.left)
             {
                 foreach(var j in v.up)
@@ -31,7 +31,7 @@ public class Tool : MonoBehaviour
             v.lu = res;
 
             // ru
-            res.Clear();
+             res = new List<TileConfig>();
             foreach (var i in v.right)
             {
                 foreach (var j in v.up)
@@ -49,7 +49,7 @@ public class Tool : MonoBehaviour
             v.ru = res;
 
             // ld
-            res.Clear();
+            res = new List<TileConfig>();
             foreach (var i in v.left)
             {
                 foreach (var j in v.down)
@@ -67,12 +67,12 @@ public class Tool : MonoBehaviour
             v.ld = res;
 
             // rd
-            res.Clear();
+            res = new List<TileConfig>();
             foreach (var i in v.right)
             {
-                foreach (var j in v.up)
+                foreach (var j in v.down)
                 {
-                    tmp = GetGeneralPoint(i.up, j.right);
+                    tmp = GetGeneralPoint(i.down, j.right);
                     foreach (var k in tmp)
                     {
                         if (!res.Contains(k))

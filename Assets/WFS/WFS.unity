@@ -457,7 +457,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: dd5acfa52f1e11745b6adad003599e86, type: 2}
   - {fileID: 11400000, guid: 191a41be42ef20a4495aa633626631d2, type: 2}
   - {fileID: 11400000, guid: f8b0bfaa826a5c945827bf1058158219, type: 2}
-  deltaT: 0.1
+  deltaT: 0.01
   tileMap: {fileID: 1813678933}
   defaultTile: {fileID: 11400000, guid: bc03d21a7611a5b4183cf2de2283a782, type: 2}
   markTile: {fileID: 11400000, guid: 0e6c82bc4e2e3f544b8aead3d5082ec1, type: 2}

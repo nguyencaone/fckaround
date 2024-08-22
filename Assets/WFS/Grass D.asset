@@ -20,29 +20,22 @@ MonoBehaviour:
   - {fileID: 11400000}
   up:
   - {fileID: 11400000, guid: f8b0bfaa826a5c945827bf1058158219, type: 2}
-  - {fileID: 11400000, guid: 191a41be42ef20a4495aa633626631d2, type: 2}
   down:
   - {fileID: 11400000, guid: 9d0654aa7fcac6d478cd69968c1dc054, type: 2}
   - {fileID: 11400000, guid: dd5acfa52f1e11745b6adad003599e86, type: 2}
   - {fileID: 11400000, guid: 191a41be42ef20a4495aa633626631d2, type: 2}
   ru:
-  - {fileID: 11400000, guid: f8b0bfaa826a5c945827bf1058158219, type: 2}
-  - {fileID: 11400000, guid: 191a41be42ef20a4495aa633626631d2, type: 2}
   - {fileID: 11400000, guid: d92af393276c06f49984d04bd0c8577d, type: 2}
-  - {fileID: 11400000, guid: dd5acfa52f1e11745b6adad003599e86, type: 2}
+  - {fileID: 11400000, guid: f8b0bfaa826a5c945827bf1058158219, type: 2}
   rd:
-  - {fileID: 11400000, guid: f8b0bfaa826a5c945827bf1058158219, type: 2}
   - {fileID: 11400000, guid: 191a41be42ef20a4495aa633626631d2, type: 2}
-  - {fileID: 11400000, guid: d92af393276c06f49984d04bd0c8577d, type: 2}
+  - {fileID: 11400000, guid: 9d0654aa7fcac6d478cd69968c1dc054, type: 2}
   - {fileID: 11400000, guid: dd5acfa52f1e11745b6adad003599e86, type: 2}
   lu:
   - {fileID: 11400000, guid: f8b0bfaa826a5c945827bf1058158219, type: 2}
-  - {fileID: 11400000, guid: 191a41be42ef20a4495aa633626631d2, type: 2}
-  - {fileID: 11400000, guid: d92af393276c06f49984d04bd0c8577d, type: 2}
-  - {fileID: 11400000, guid: dd5acfa52f1e11745b6adad003599e86, type: 2}
+  - {fileID: 11400000, guid: dc471e5c8d045414394d62e3ab4cac8f, type: 2}
   ld:
-  - {fileID: 11400000, guid: f8b0bfaa826a5c945827bf1058158219, type: 2}
-  - {fileID: 11400000, guid: 191a41be42ef20a4495aa633626631d2, type: 2}
-  - {fileID: 11400000, guid: d92af393276c06f49984d04bd0c8577d, type: 2}
   - {fileID: 11400000, guid: dd5acfa52f1e11745b6adad003599e86, type: 2}
+  - {fileID: 11400000, guid: 191a41be42ef20a4495aa633626631d2, type: 2}
+  - {fileID: 11400000, guid: 9d0654aa7fcac6d478cd69968c1dc054, type: 2}
   tile: {fileID: 11400000, guid: e29416e9a9d30504bbea74b5170e11cb, type: 2}
