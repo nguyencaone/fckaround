@@ -6,7 +6,7 @@ public class Pool
 {
     IPoolable _prototype;
     Stack<GameObject> _usableStack;
-    private static readonly Dictionary<GameObject, Pool> _prefabLookup = new Dictionary<GameObject, Pool>(64);
+    private static Dictionary<GameObject, Pool> prefabLookup=null;
 
     public Pool(IPoolable pref)
     {
@@ -14,15 +14,26 @@ public class Pool
         _usableStack = new Stack<GameObject>();
     }
 
+    public static void InitPrefabLookup()
+    {
+        prefabLookup = new Dictionary<GameObject, Pool>(64);
+    }
+
     public static Pool GetPoolByPrefab(GameObject pref)
     {
         var v = pref.GetComponent<IPoolable>();
         if (v == null) return null;
-        _prefabLookup.TryGetValue(pref, out var pool);
+
+        prefabLookup.TryGetValue(pref, out var pool);
+
         if (pool == null)
         {
             pool = new Pool(v);
-            _prefabLookup[pref] = pool;
+            prefabLookup[pref] = pool;
+        }
+        else
+        {
+            // Debug.Log("Pool existed");
         }
         return pool;
     }
@@ -49,6 +60,7 @@ public class Pool
 
     public GameObject GetInstance(Transform parentTrans)
     {
+        Debug.Log($"Usable: {_usableStack.Count}");
         if (_usableStack.Count == 0)
         {
             Debug.Log("Stack not enough, instantiate new instance");

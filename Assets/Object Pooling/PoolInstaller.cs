@@ -20,6 +20,7 @@ public class PoolInstaller : MonoBehaviour
 
     private void Awake()
     {
+        Pool.InitPrefabLookup();
         foreach (var item in poolableItems)
         {
             item.Populate();

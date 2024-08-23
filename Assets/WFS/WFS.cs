@@ -146,7 +146,7 @@ public class WFS : MonoBehaviour
     {
         Progress();
         yield return new WaitForSeconds(deltaT);
-        if(count < w*h)
+        if(count <= w*h)
         {
             StartCoroutine(SetTileCo());
         }
